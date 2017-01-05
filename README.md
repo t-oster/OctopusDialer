@@ -7,10 +7,10 @@ Ich setze dieses Programm erfolgreich ein, um in einer Umgebung mit Octopus F Te
 rufe das Programm wie folgt auf:
 
 ```
-java -jar OctopusDialer.jar <ip> <src> <dst>
+java -jar OctopusDialer.jar <ip> <port> <src> <dst>
 ```
 
-Damit wird die Telefonanlage unter <ip> kontaktiert und das Telefon mit der internen Durchwahl <src> ruft die Nummer <dst> an. Getestet
+Damit wird die Telefonanlage unter <ip> und <port> (meistens 7001) kontaktiert und das Telefon mit der internen Durchwahl <src> ruft die Nummer <dst> an. Getestet
 mit Siemens Open Stage T 40.
 
 Ich kann nicht sagen, ob es nur mit unserer Anlage funktioniert, oder was genau das Programm tut. Ich habe lediglich mit Wireshark

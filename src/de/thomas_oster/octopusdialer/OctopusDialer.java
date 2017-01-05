@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class OctopusDialer {
 
-    public static void call(String from, String to) throws IOException, InterruptedException {
+    public static void call(String ip, int port, String from, String to) throws IOException, InterruptedException {
         char from0 = from.charAt(0);
         char from1 = from.charAt(1);
         
@@ -68,7 +68,7 @@ public class OctopusDialer {
         0x02, 0x01, 0x0a, 0x30, (char) (0x0c-2+to.length()), 0x30, 0x04, 0x80, 
         0x02, from0, from1, 0x30, (char) (0x04-2+to.length()), 0x80, (char) (0x02-2+to.length())};
         
-        Socket kkSocket = new Socket("10.10.10.90", 7001);
+        Socket kkSocket = new Socket(ip, port);
         OutputStream out = kkSocket.getOutputStream();
         final InputStream in = kkSocket.getInputStream();
         new Thread(){
@@ -106,10 +106,11 @@ public class OctopusDialer {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException, InterruptedException {
-        if (args.length != 2) {
-            System.out.println("Usage: <from> <to>");
+        if (args.length != 4) {
+            System.out.println("Usage: <ip> <port> <from> <to>");
+	    return;
         }
-        call(args[0], args[1]);
+        call(args[0], Integer.parseInt(args[1]), args[2], args[3]);
     }
     
 }
