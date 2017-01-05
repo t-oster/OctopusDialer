@@ -20,4 +20,6 @@ nachgestellt.
 Dann habe ich herausgefunden an welchen Stellen die Zielrufnummer und deren Länge übermittelt wird und habe diese angepasst.
 Ich kann nicht sagen, ob es für alle Nummern funktioniert und welche Seiteneffekte es hat, aber bei uns geht's.
 
+Download: https://github.com/t-oster/OctopusDialer/raw/master/release/OctopusDialer.jar
+
 Viel Spaß
